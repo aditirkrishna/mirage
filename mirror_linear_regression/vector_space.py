@@ -25,8 +25,9 @@ class VectorSpace(ABC):
 
 class EuclideanSpace(VectorSpace):
     """Standard Euclidean vector space abstraction."""
-    def zero(self):
-        return 0.0
+    def zero(self, shape):
+        """Return the zero vector of given shape."""
+        return np.zeros(shape)
 
     def inner(self, x, y):
         return np.dot(x, y)
